@@ -10,5 +10,23 @@ final class ExamenTest extends TestCase
         $this->assertNotEmpty($examen->tamanioArray);
     }
 
-    
+    public function testInicializarArray()
+    {
+        $examen = new Examen();
+        $examen->setTamanioArray(rand(0,1000));
+        $examen->inicializarArray();
+        $this->assertNotEmpty($examen->arrayNumeros);        
+    }
+
+    public function testCalcularResultado()
+    {
+        $examen = new Examen();
+        $examen->setTamanioArray( rand(0,1000) );
+        $examen->inicializarArray();        
+        $examen->calcularResultado($examen->arrayNumeros, rand(0, 1000));
+        $resultado = $examen->getResultado();
+        $this->assertNotEmpty($resultado);
+    }
+
+
 }

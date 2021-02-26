@@ -5,20 +5,17 @@ class Examen {
     public $arrayNumeros;    
     public $resultado;
 
-    function __construct(){
-        
+    function __construct(){        
         $this->arrayNumeros = array();        
-        $this->resultado = 0;
-        $this->inicializarArray();        
+        $this->resultado = 0;             
     }
 
     public function setTamanioArray($_tamanioArray)
     {
         $this->tamanioArray = $_tamanioArray;
     }
-
-    public function calcularResultado($_arrayNumeros, $_numeroEntero){
-        // Valido errores
+    
+    public function calcularResultado($_arrayNumeros, $_numeroEntero){        
         
         if($_numeroEntero< 0 || $_numeroEntero > 1000){
             throw new Exception('El número entero X debe estar en el rango 0-1000');
@@ -40,7 +37,7 @@ class Examen {
         }
     }
 
-    private function inicializarArray(){
+    public function inicializarArray(){
         for($i = 0; $i <= $this->tamanioArray; $i++){
             array_push($this->arrayNumeros, rand(-1000, 1000));
         }
