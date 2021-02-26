@@ -4,6 +4,7 @@ class Examen {
     public $tamanioArray;
     public $arrayNumeros;    
     public $resultado;
+    public $verDetalleResultado = TRUE;
 
     function __construct(){        
         $this->arrayNumeros = array();        
@@ -25,6 +26,8 @@ class Examen {
             throw new Exception('El array no puede estar vacío, debe contener al menos dos elementos');
         }
 
+        $parKey = 1;
+
         foreach($_arrayNumeros as $key => $valor){
             $posSiguiente = $key + 1;            
             
@@ -32,6 +35,11 @@ class Examen {
                 
                 if(($valor + $_arrayNumeros[$k]) == $_numeroEntero){                    
                     $this->resultado++;                    
+
+                    if($this->verDetalleResultado){
+                        echo "Par #$parKey: ($valor + $_arrayNumeros[$k]) = $_numeroEntero \n";
+                        $parKey++;
+                    }
                 }
             }            
         }
@@ -49,12 +57,19 @@ class Examen {
     }
 }
 
+### Aquí se realiza el testeo sin framework del ejercicio
+
 $examen = new Examen();
 $examen->setTamanioArray( rand(0,1000) );
-$examen->inicializarArray();        
+$examen->inicializarArray();
+if($examen->verDetalleResultado){
+    echo "El array inicializado es: \n";
+    print_r($examen->arrayNumeros);     
+    echo "\n\n";
+}
 $numeroEntero = rand(0, 1000);
 $examen->calcularResultado($examen->arrayNumeros, $numeroEntero);
 $resultado = $examen->getResultado();
-echo "Se encontraron " . $resultado . " pares de numeros, que sumados son igual a $numeroEntero, sobre un array de un tamanio de $examen->tamanioArray\n";
+echo "\nSe encontraron [" . $resultado . "] pares de numeros, que sumados son igual al numero [$numeroEntero], sobre un array de un tamanio de [$examen->tamanioArray]\n";
 
 ?>
