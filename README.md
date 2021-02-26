@@ -13,3 +13,10 @@ Fuente: https://phpunit.de/getting-started/phpunit-9.html
 2. Ingresar a https://getcomposer.org/download/ para instalar composer. Ejecutar los comandos dentro de la carpeta del proyecto.
 3. Instalar las dependencias de PHPUNIT ```composer require --dev phpunit/phpunit ^9```
 4. Correr los casos de testing ```./vendor/bin/phpunit tests```
+
+# Prueba rápida
+
+Ejecutar el siguiente comando
+```php src/Examen.php ```
+EL resultado arroja una descripción similar a lo siguiente:
+```Se encontraron 15 pares de numeros, que sumados son igual a 784, sobre un array de un tamanio de 324```
