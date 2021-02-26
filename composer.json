@@ -1,17 +1,10 @@
 {
-    "name": "renzo/examen-sitrackv2",
+    "name": "renzo/ejercicio-examen",
     "authors": [
         {
-            "name": "Renzo",
-            "email": "renn.carp@gmail.com"
+            "name": "Renzo Ontivero",
+            "email": "rontivero@ultimamillasa.com.ar"
         }
     ],
-    "autoload": {
-        "classmap": [
-            "src/"
-        ]
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9"
-    }
+    "require": {}
 }

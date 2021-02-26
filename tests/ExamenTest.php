@@ -29,6 +29,4 @@ final class ExamenTest extends TestCase
         echo "Se encontraron " . $resultado . " pares de numeros, que sumados son igual a $numeroEntero, sobre un array de un tamanio de $examen->tamanioArray\n";
         $this->assertNotEmpty($resultado);
     }
-
-
 }

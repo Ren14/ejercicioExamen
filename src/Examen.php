@@ -49,4 +49,12 @@ class Examen {
     }
 }
 
+$examen = new Examen();
+$examen->setTamanioArray( rand(0,1000) );
+$examen->inicializarArray();        
+$numeroEntero = rand(0, 1000);
+$examen->calcularResultado($examen->arrayNumeros, $numeroEntero);
+$resultado = $examen->getResultado();
+echo "Se encontraron " . $resultado . " pares de numeros, que sumados son igual a $numeroEntero, sobre un array de un tamanio de $examen->tamanioArray\n";
+
 ?>
