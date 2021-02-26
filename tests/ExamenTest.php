@@ -3,7 +3,7 @@ use PHPUnit\Framework\TestCase;
 
 final class ExamenTest extends TestCase
 {
-    public function testTamanioArray(): void
+    public function testTamanioArray()
     {
         $examen = new Examen();
         $examen->setTamanioArray(rand(0,1000));
@@ -23,8 +23,10 @@ final class ExamenTest extends TestCase
         $examen = new Examen();
         $examen->setTamanioArray( rand(0,1000) );
         $examen->inicializarArray();        
-        $examen->calcularResultado($examen->arrayNumeros, rand(0, 1000));
+        $numeroEntero = rand(0, 1000);
+        $examen->calcularResultado($examen->arrayNumeros, $numeroEntero);
         $resultado = $examen->getResultado();
+        echo "Se encontraron " . $resultado . " pares de numeros, que sumados son igual a $numeroEntero, sobre un array de un tamanio de $examen->tamanioArray\n";
         $this->assertNotEmpty($resultado);
     }
 
